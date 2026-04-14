@@ -1,1 +1,153 @@
-
+Q1. What are the java 8 new features?
+This is the most asked interview question on Java 8. Many of the java developers do not work on java 8. Below are the java 8 features:
+1. Functional Interface: Each functional interface has a single abstract method, called the functional method, implementation can be provided using the lambda expressions.
+2. Lambda Expressions: It is a feature derived from functional programming. It is a function that does not belong to any class.
+3. Optional: Instead of using null values Optional class is used for representing Optional values.
+4. Stream API
+5. Spliterator 
+6. Method References
+7. New Date and Time API.
+You can find the important java 8 features here.
+Q2 What is the difference between Collection API and Stream API?
+Differences between Collection API and Stream API are as follow :
+1. Collection API was introduced in JDK 1.2 while Stream API is introduced in JDK 1.8
+2. Collection objects are created eagerly while Stream API objects are created lazily.
+3. Iterate and Consume elements at any number of times for the Collection object while iterate and consume elements only one time for the Stream object.
+Q3 What is Lambda Expression?
+According to Oracle docs,
+Lambda expressions are the method without name i.e Anonymous method. In other words, Lambda expression is a function that can be passed around and referenced as an object.
+For example:
+Structure of Lambda Expression
+A lambda expression consists of three parts :
+a. Parameter List
+b. Lambda symbol ->
+c. Expression
+(Parameter List) ->{expression;} 
+Q4. What is the difference between PermGenSpace and MetaSpace?
+In JDK 8 onwards PermGenSpace is removed. Earlier PermGenSpace is used for storing the metadata. Metadata means storing information about classes like bytecodes, names, and JIT information.
+Java classes metadata now stored in a native heap and this space is called MetaSpace. Metaspace grows automatically by default and will be garbage collected.
+So the major difference between PermGenSpace and MetaSpace is that PermGenSpace was fixed in size and did not grow automatically, but MetaSpace does not have any size constraints.
+For more information about the PermGenSpace and Metaspace in Java 8, you can check here.
+Q5 What is the Optional class in java?
+Java SE 8 introduces a new class in the util package i.e java.util.Optional. In a nutshell, you can view Optional as a single value container that either contains the value or not (then it is called as empty).
+It is used to avoid NullPointerException. This Optional class concept is inspired by Haskell and Scala.
+Example of Optional Class
+a. Here is an Empty Optional
+Optional<Soundcard>  sc = Optional.empty();
+b. Here is an Optional with a non-null value
+Soundcard soundcard = new Soundcard();
+Optional<Soundcard> sc = Optional.of(soundcard);
+The Optional class has various utility methods such as isPresent() which help coders to avoid making use of null value checks.
+ Q6 What is Functional Interface in Java 8?
+In simple words, the Functional interface has exactly one abstract method. A compile-time error is thrown if an interface declaration is annotated with @FunctionalInterface  but is not, in fact, a functional interface.
+Example of Functional Interface
+Already there are many functional interfaces in java. For example, Comparable and Runnable.
+The functional interface does not count default methods.
+Q7 How to create a Functional Interface in Java8?
+Java is able to identify Functional Interface but you can declare one in the class by using the @FunctionalInterface.
+Below is the coding example of Functional Interface:
+@FunctionalInterface
+interface FuncInterfaceExample{
+    int sum(int a, int b);
+    default int multiply(int a, int b) {
+        return a*b;
+    }
+}
+public class MainJava8Class {
+    public static void main(String args[]) {
+      FuncInterfaceExample obj = (a,b) -> a+b; 
+      System.out.println("Sum of two numbers is: " +obj.sum(4,8));
+    }
+}
+Output:
+Sum of two numbers is: 12 
+Q8 What do you understand by the term SAM interface? 
+Java 8 provided the feature of a functional interface. Since a functional interface can contain only one abstract method, hence, they are called SAM or "Single Abstract Method".
+Q9 What is a default method in Java 8? When to use it? 
+The default method is also known as defender methods or virtual extension methods. It is a non-abstract method i.e have a body, which can be declared inside the interface.
+The default method is introduced in Java 8 for backward compatibility. That is if you add a new abstract method to the interface, all the implementing classes shall break. Implementing classes need to implement the added abstract method. This problem is solved by the default method of java 8.
+Q10 What is the difference between Iterator and Spliterator?
+Difference between Iterator and Spliterator  are as follow:
+1. Introduction: Iterator was introduced in JDK 1.2 while Spliterator  is introduced in JDK 1.8
+2. Use in API: Iterator is used for Collection API while Spliterator is used for Stream API
+3. Parallel programming: Iterator can be used for iterating the elements in Collection in sequential order while  Spliterator can be used for iterating the Stream elements in parallel or sequential order.
+4. Universal Iterator: Iterator is a universal iterator while Spliterator is not a universal iterator.
+Q11 What is the difference and similarities between Function and Predicate in java 8?
+Difference:
+1. Return Type: Function returns an Object and it is a single argument function.
+The predicate return type is boolean (i.e true or false) and it is also a single argument function.
+Similarities:
+1. Both are functional interfaces i.e both contain a single abstract method.
+Q12 What is the difference between Internal iteration and External iteration?
+Java 8 has introduced the new concept of "internal iteration". Prior to java 8, there is only external iteration. Let's dive into the differences between internal iteration and external iteration.
+Availability: Internal iteration is added in JDK 8 while external iteration is there before JDK 8.
+Iteration behavior: Internal iterator iterating an Aggregated Object elements like Collections, Arrays internally.
+External iterator iterating an Aggregated Object elements externally.
+Approach:  Internal iterator follows a functional programming approach that is declarative style.
+Meanwhile, the External iterator follows the OOP approach i.e imperative style.
+Q13 What is the method reference in java 8?
+Method reference is represented by using the double colon operator "::".  Lambda expressions are used to create a method anonymously. Sometimes, the sole purpose of lambda expressions is to call existing methods.
+Here is the syntax of method reference :
+Object :: nameOfTheMethod
+According to Oracle docs,  Method references are compact, easy-to-read lambda expressions for methods that already have a name.
+Q14 What does String::valueOf expression means?
+It is a reference to a static method i.e valueOf method of String class.
+Q15 Will the following code compile?
+@FunctionalInterface
+public interface JavaHungry<A, B, C> {
+    public C apply(A a, B b);
+    default void printString() {
+        System.out.println("javahungry");
+    }
+}
+Yes, the above code will compile. The above code follows the functional interface specification of allowing only a single abstract method. The default method printString() does not count as the abstract method.
+Q16 What is the difference between skip(long) and limit(long) in Java 8?
+ The skip(long n) method returns the remaining elements after discarding the first n elements of the given stream.
+For example:
+import java.util.stream.Stream;
+public class Java8SkipExample {
+    public static void main(String args[]) {
+      Stream.of(10,11,12,13,14,15,16)
+            .skip(3)
+            /* skip first three elements and print the
+            remaining elements of the stream */
+            .forEach((num) -> System.out.println(num));
+    }
+}
+Output:
+13
+14
+15
+16
+The limit(long maxSize) method returns the Stream of elements of a specified size.
+For example:
+import java.util.stream.Stream;
+public class Java8LimitExample {
+    public static void main(String args[]) {
+      Stream.of(10,11,12,13,14,15,16)
+            .limit(3)
+            /* limit prints the first three elements */
+            .forEach((num) -> System.out.println(num));
+    }
+}
+Output:
+10
+11
+12
+Q17 What is Nashorn in java 8?
+Nashorn is the latest javascript engine released with java8. Before JDK 8, the javascript engine was based on Mozilla Rhino.
+It provides better compliance with ECMA normalized javascript specifications and better runtime performance.
+Q18 What are the issues of the old Date and Time APIs.  Can you explain the new Date and Time APIs in java 8?
+Prior to java 8, Old Date and Time API's are there. Let's find out what are the issues with them:
+Performance:  Java 8 APIs are better in terms of performance than older Date and Time APIs.
+Standards: Java 8 Date and Time API  comply with ISO standard, meanwhile, older java 8 Date and Time API were hard to understand and poorly designed.
+Thread-safe: Most frequently used java.util.Date is mutable and not thread-safe. New Java 8 Date and Time API are thread-safe.
+LocalDateTime, LocalDate, and LocalTime are few of the latest core API classes of java 8.
+Q19 What is Stream API in Java 8? Why do we need it?
+ Stream API is the new feature of Java 8. It is used to process or compute the data.
+Why do we need Stream API
+a. Stream API supports aggregate operations that simplify the processing.
+b. It provides Functional-Style programming.
+Q20 What is the difference between findAny() and findFirst() methods of Java 8?
+a. findAny() will return any element from the given stream while findFirst() will return the first element of the given stream. 
+b. findAny() shows non-deterministic behavior whereas findFirst() shows deterministic behavior.
