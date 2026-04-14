@@ -1,0 +1,183 @@
+Q1.  What is String?
+String is a class in java which is present in java.lang package. According to Oracle docs,
+The String class represents character strings. Strings are constant, their values can not be changed after they are created.
+Q2  Is String immutable in java?
+Yes, String class is immutable in java. Immutable means once the object is created, its value can not be changed.
+Q3 Is String a keyword in java ?
+No, String  is not a keyword in java.
+Q4 How many objects are created using new keyword?
+String str = new String("JavaHungry");
+Two objects are created by the above statement. One object in the heap memory and one object in the String constant pool.
+Q5 Write a program to reverse a String in java ?
+I have already shared how to reverse a String in java by 6 different ways. [Solution]
+Q6 How to convert String to char Array?
+You can convert String to char Array using toCharArray() method.
+Q7 How many different ways you can create a String object?
+Discover more
+programming
+Programming
+Java (Programming Language)
+You can create a String object using two ways. First is using new operator and second is using string literal. Objects created using new operator are stored in the heap memory while string literals are stored in the string constant pool.
+String str = "javahungry";  // String literal
+String str = new String("javahungry"); // using new operator
+Q8 Are String thread-safe in java?
+As we know String objects are immutable. It means they are thread-safe also.
+Q9 Which class is final among String, StringBuilder and StringBuffer?
+All are final classes.
+Q10 Is String primitive type or object (derived) type in java?
+String is object(derived) type in java.
+Q11 Can we use String in switch statement?
+Yes, you can use String in switch statement in java 7. Prior to java 7 , you had to use if-else statements to achieve the task.
+Intermediate Level (2-7 years)- Java String Interview Questions and Answers
+Discover more
+Computer Science
+programming language
+Java
+Q12  Write a program to reverse a String in java without using reverse() method?
+This is a very important question. Please make sure you have gone through this before appearing for the interview. I have already shared how to reverse a String in java by 6 different ways. [Solution]
+Q13 What is the difference between String and StringBuffer in java?
+This is one of the most asked question in the java developer interview.
+String is immutable in java. Once created its value can not be changed. StringBuffer is mutable.
+Check what is the difference between String and StringBuffer in java.
+Q14 What is the difference between StringBuilder and StringBuffer in java?
+Discover more
+Java (Programming Language)
+Programming
+programming
+Below are the main differences between StringBuilder and StringBuffer in java.
+1. StringBuilder is not thread-safe. StringBuffer is thread-safe.
+2. StringBuilder is not synchronized and StringBuffer is synchronized.
+3. StringBuilder is faster while StringBuffer is slower as it is thread-safe.
+Q15  Explain the difference between below statements:
+String str = new String("abc");
+String  str =  "abc";
+In the first statement, String str = new String("abc");
+JVM will create one object in the heap memory. Another object in the String constant pool, if the object is not present. Otherwise,if present in the String constant pool ,it will return the reference to it.
+In the second statement, String str = "abc";
+JVM checks for the string "abc" in the String constant pool. If the string is not present in the constant pool then it will create a new String object and stores it in pool.
+If the string "abc" is found in string constant pool , then it simply creates a reference to it but does not create a new object. 
+Q16 How many objects will be created for the following code:
+String str1 = "abc";
+String str2 = new String("abc");
+Two objects are created. Object created using new operator is stored in the heap memory (str2).
+Object created using String literal str1 is stored in the string constant pool.
+Q17 How many objects will be created for the following code:
+String str1 = "abc";
+String str2 = "abc";
+Only one object is created. String str1 will create a new object in String constant pool, while String str2 will create a reference to the String str1.
+Q18 How many objects will be created for the following code:
+String str1 = new String("abc");
+String str2 = new String("abc");
+Three objects are created. For the first statement(str1) two objects are created one in String constant pool and one in heap memory.
+But for the second statement(str2), compulsory 1 new object is created in heap memory but no new object is created in string constant pool as it is already present.
+Hence , a total of 2+1 = 3 objects are created.
+Q19 What is String intern() method?
+According to Oracle docs,
+When the intern method is invoked, if the String constant pool already contains a string equal to the String object as determined by the equals(Object) method, then the string from the pool is returned.
+Otherwise the String object is added to the pool and a reference to the String object is returned.
+The task of intern() method is to put String (which is passed to the intern method) into string constant pool.
+Q20 What are mutable and immutable objects in java?
+Mutable objects value can be changed. StringBuilder and StringBuffer are the examples of the mutable objects.
+Immutable objects value can not be changed once created. String is an immutable class in java.
+Q21 Why is String immutable in java ?
+There are various reasons to make String immutable in java.
+1. Security :  String is made immutable to help increase the Security. Sensitive data like username,password can be stored as the Strings can't be modified once created.
+2. Class loading : String objects are used for Class loading. It is possible that wrong class has been loaded in the JVM, if the String is mutable i.e modifiable.
+3. Thread Safe : Immutable Strings are thread-safe. Synchronization is not required when we use them in the multithreading environment.
+You can check more here.
+Q22 How will you create an immutable class in java?
+You can create immutable class in java by implementing below points:
+1. Make the class final so it can not be extended(inherited)
+2. Make all fields private so one can not access them from outside the class.
+3. Do not provide setter methods for the variables.
+4. Declare all mutable fields as final so that it's value can be assigned only once.
+Q23 How will you create mutable String objects in java?
+As we have discussed, by using StringBuffer and StringBuilder objects.
+Q24 What is the difference between Java String and C,C++ Strings ?
+In C and Java both programming language treat String object as char Array.
+Java String is an object while C String is a NULL terminated character array. Java String object allows calling different methods like toUpperCase(), length(), substring().
+Q25 Why String is mostly used as a key in HashMap class?
+String is mostly  used as a key in HashMap class because it implements equals() and hashCode() methods which is required for an Object to be used as key in HashMap.
+Q26 Is it possible to call String class methods using String literals?
+Yes, It is possible to call String class methods using String literals. For example
+"javahungry".indexOf(u)
+"javahungry".charAt(0)
+"javahungry".compareTo("javahungry")
+Q27 How to Split String in java?
+You can use split() method of java.lang.String class or StringTokenizer to  split a comma separated String. String split() method is easier to use and better because it expects a regular expression and returns an array of String which you can manipulate in the program code.
+Q28 Write a java program to find the first non repeated character in the String? [Solution]
+This is the starting question for the product companies, so make sure you go through it. Write a java program to find the first non repeated character in the String.
+Q29 How do you compare two Strings in Java?
+Use equals() method to compare two Strings.Avoid using "==" operator. The main reason to use equals() method is that it always compare String values i.e content. == operator compares the reference in the memory. Check the difference between == and equals() method in java.
+String str1 = "abc";
+String str2 = new String("abc");
+System.out.println(str1 == str2); //false
+System.out.println(str1.equals(str2)); //true  
+Q30 Explain the difference between str1.equals("abc") and "abc".equals(str1), where str1 is any String object?
+If str1 value is "abc" then both statements will give the result true. Main difference between the two statement arises when we pass str1 value as NULL. If the str1 is null then first statement will throw null pointer exception while second statement will return false.
+Q31 Find out if String has all Unique Characters? [Solution]
+Write a java program to find out if the given String has all Unique Characters. There are 5 ways to determine String has all Unique Characters.
+Q32 How to Count number of words in the String? [Solution]
+This is an important phone interview coding question. Write a java program to count number of words in the String.
+Q33 How to remove all the white-spaces in the String? [Solution]
+Write a java program to remove all the white-spaces in the String.
+Q34 Print all permutations of the String ?
+Write a java program to find all the permutations of the given String. Permutation is the all possible combinations of the Strings possible for any word. [Solution]
+Q35 How to calculate total number of characters in the String?
+  Write a java program to calculate total number of characters in the String .[Solution]
+Q36 How to calculate total number of vowels in String?[Solution]
+Write a java program to calculate total number of vowels in String .
+for example :
+if the original string : " Alive is awesome "
+then the number of vowels is : 8
+Q37 String concatenation in java?[Solution]
+Write different ways for String concatenation in java?
+Input: “Java” and “Hungry”
+Output: “JavaHungry”
+ Input: “1234” and “5678”
+Output: “12345678”
+Q38 Find all possible combinations of String?
+Write a java program to find all possible combinations of String. This question can be asked in the phone interview, so make sure you go through it.[Solution]
+Q39 Write a java program to check if the input string is palindrome?
+I have already shared the code to check whether input string is palindrome or not. [Solution]
+Q40 What is String Constant Pool?  Why java provided String Constant pool as we can store String in the heap memory?
+String constant pool is the memory space allocated in the heap memory to store the objects which are
+created using String literals. String constant pool is unique, there are no two String o objects which has the same value(content).
+Why String Constant Pool ?
+String constant pool increases the reusability of the existing String objects.
+It also saves memory as no two objects with same content are created.
+Q41 There are lot of String concatenation and String modification operations in my code. Which class should I use among String,StringBuffer and StringBuilder? Given I also want thread-safe code?
+This is scenario based question. You should give answer StringBuffer.
+You can use String also but with every modification and concatenation operation, a new String is formed as String is immutable. It will lead to the memory allocation issues.
+StringBuilder can not be used as it is not synchronized, i.e thread-safe.
+So, the clear answer is StringBuffer.
+Advanced Level (8+ years)- Java String Interview Questions and Answers
+Q42 Why char Array is preferred over String in storing passwords?
+One of the main reason to prefer char Array over String is security risk of stealing passwords. Since String are reusable in the constant pool , there are high chances that they remain in the memory for the long duration. Anyone who has access to the memory dump can find the password in clear text.
+That's why password should be encrypted.
+Q43 What is Character encoding? Explain the difference between UTF-16 and UTF-8?
+When you want to represent Character using bytes, character encoding is used.
+The UTF-16 uses 2 bytes or 16 bits to represent a character while UTF-8 uses 1 byte or 8 bits to represent a character.
+Q44 How does substring() method works in java?
+substring shares the same character array as String. It can lead to the memory leak if the original String is quite big and not necessary to retain in the memory. It is unintentionally retained by substring as substring is smaller in size.It results in the prevention of large array being garbage collected.
+Q45 Anagram program in java? [Solution]
+Write a java program to check whether two given strings are anagram. If two strings contain same set of characters but in different order then the two strings are called anagram.
+Q46 How to Count occurrences of each character in a String in java?[Solution]
+Write a java program to count occurrences of each character in String in java. If the String is  
+"Java Hungry" then the answer should be
+{ =1, a=2, r=1, u=1, v=1, g=1, H=1, y=1, J=1, n=1}
+Q47 Convert Lowercase to Uppercase in java and Uppercase to Lowercase without using built in method ?
+Write  a java program to convert Lowercase to Uppercase and vice versa in a given String. [Solution]
+Q48 How to remove specific characters in the String? [Solution]
+To remove specific characters in the String .For example,
+If the original string is "Alive is awesome"   and the user inputs string to remove "alwsr"  then it should print  "ive i eome" as output .
+If the original string is "Learning never stops"   and the user inputs string to remove "estp"  then the it should print   "Larning nvr o" as output .
+Q49 How to Convert Signed Integer to String? [Solution]
+Here to convert signed int to string in java, two case arises :
+1. If number is positive (+ve)   :
+    Input : 84   Output :  "84"
+2. If number is negative (-ve)
+    Input : -84  Output : "-84"
+That's it for today, if you find any new interview questions on String then please mention in the comments, I will add it to the above post. Thanks for reading top 50 java string interview questions and answers.
+Q50 Find the length of the String without using length() method? [Solution]
+Write a java program to find out the length of the String without using length() method.
