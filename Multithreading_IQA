@@ -61,6 +61,72 @@ Q17 What measures you should take to avoid deadlock?
 1. Lock specific member variables of the class rather than locking whole class.
 2. Use join() method, if possible try to use join method ,although it may refrain us from taking full advantage of multithreading environment because threads will start and end sequentially, but it can be handy in avoiding deadlocks.
 3. If possible try to avoid nested synchronization blocks.
+Deadlocks don’t go away by luck—you have to design your code so threads never get stuck waiting on each other. Here are the most practical ways (with examples you can explain in interviews):
+🔹 1. Maintain a Consistent Lock Order (Most Important)
+Always acquire locks in the same order across all threads.
+❌ Problem:
+// Thread 1
+synchronized (A) {
+    synchronized (B) { }
+}
+// Thread 2
+synchronized (B) {
+    synchronized (A) { }
+}
+✅ Fix:
+// Both threads follow same order
+synchronized (A) {
+    synchronized (B) { }
+}
+👉 This removes circular wait, the main cause of deadlock.
+🔹 2. Use tryLock() with Timeout
+From ReentrantLock
+Instead of waiting forever, try for a limited time.
+ReentrantLock lock1 = new ReentrantLock();
+ReentrantLock lock2 = new ReentrantLock();
+if (lock1.tryLock()) {
+    try {
+        if (lock2.tryLock()) {
+            try {
+                // critical section
+            } finally {
+                lock2.unlock();
+            }
+        }
+    } finally {
+        lock1.unlock();
+    }
+}
+👉 If lock not available → thread backs off → no deadlock.
+🔹 3. Avoid Nested Locks
+Try not to acquire a lock inside another lock.
+❌ Risky:
+synchronized (A) {
+    synchronized (B) {
+        // nested locking
+    }
+}
+✅ Better:
+Use single lock
+Or redesign logic to reduce dependency
+🔹 4. Use Timeout-Based Waiting
+If using wait(), always add timeout.
+obj.wait(1000);
+👉 Prevents threads from waiting forever.
+🔹 5. Minimize Lock Scope
+Keep synchronized blocks small and fast.
+synchronized (this) {
+    // only critical code
+}
+👉 Less chance of threads blocking each other.
+🔹 6. Use Higher-Level Concurrency APIs
+Instead of manual locking, use:
+ExecutorService
+ConcurrentHashMap
+BlockingQueue
+👉 These are designed to avoid common deadlock issues.
+🔥 Interview One-Line Answer
+“Deadlock can be avoided by maintaining a consistent lock order, minimizing nested locks, and using tryLock with timeout instead of indefinite waiting.”
 Q18 What do you understand by Thread priority?
 Every thread has a priority. Its value is int which ranges from 1 to 10 where 1 being the lowest priority and 10 being the highest priority.
 Usually higher priority threads get higher precedence in execution but it depends on the ThreadScheduler implementation which is OS dependent.
