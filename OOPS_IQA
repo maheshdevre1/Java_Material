@@ -43,7 +43,29 @@ Yes, overloading a static method in java is possible. You can have as many overl
 Q15 Can we override a static method in java?
 No, you can not override a static method in java. Static methods belong to class so they are resolved at compile time using the type of reference variable.
 Q16 What do you mean by covariant method overriding in java?
-In the case of covariant method overriding, the return type must be the same as, or a subtype of,  the return type declared in the original overridden method in the superclass. The concept of covariant return type was introduced in java 1.5 version.
+Covariant method overriding in Java means that when a subclass overrides a method, it can return a more specific (subtype) return type than the method defined in the parent class.
+
+Simple Definition
+
+Covariant return type allows the overridden method to return a child class type instead of the parent class type.
+
+Example
+class Animal {
+    Animal getAnimal() {
+        return new Animal();
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    Dog getAnimal() {   // covariant return type
+        return new Dog();
+    }
+}
+Explanation
+In the parent class, method returns Animal
+In the child class, method returns Dog (which is a subclass of Animal)
+This is allowed because Dog IS-A Animal
 Q17 Can we override a method declared as private in java?
 No, you can not override a private method in java.
 Q18 Can you override the method which is declared as final?
