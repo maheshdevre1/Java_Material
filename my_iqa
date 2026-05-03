@@ -36,3 +36,44 @@ equals() → to compare keys inside bucket
 ❗ If you don’t override:
 Duplicate keys may be inserted
 Retrieval may fail ==> We will get null values 
+
+Que 4) Diff between @Primary and @Component ?
+---------------------------------------------
+When you have multiple beans of same type, Spring gets confused:
+@Component
+class Car {}
+@Component
+class Bike {}
+@Autowired
+Vehicle vehicle; // ❌ Error: multiple beans
+👉 This is called NoUniqueBeanDefinitionException
+🔹 2. @Primary
+👉 Default bean choose karne ke liye
+@Component
+@Primary
+class Car implements Vehicle {}
+@Component
+class Bike implements Vehicle {}
+@Autowired
+Vehicle vehicle;
+👉 Output:
+Car bean injected ✅
+✔ Spring automatically selects @Primary bean
+🔹 3. @Qualifier
+👉 Specific bean choose karne ke liye
+@Component("carBean")
+class Car implements Vehicle {}
+@Component("bikeBean")
+class Bike implements Vehicle {}
+@Autowired
+@Qualifier("bikeBean")
+Vehicle vehicle;
+👉 Output:
+Bike bean injected ✅
+✔ You explicitly tell Spring which bean to use
+🔥 Key Differences
+Feature	@Primary	@Qualifier
+Purpose	Default selection	Specific selection
+Usage	Class level	Field/parameter level
+Control	Less	More precise
+When used	When 1 bean should be default	When multiple choices needed
