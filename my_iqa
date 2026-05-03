@@ -77,3 +77,28 @@ Purpose	Default selection	Specific selection
 Usage	Class level	Field/parameter level
 Control	Less	More precise
 When used	When 1 bean should be default	When multiple choices needed
+
+Que 5)What is ExecutorService?
+In Java, ExecutorService is used to manage and control multiple threads.
+👉 Instead of creating threads manually, it:
+Creates a thread pool
+Reuses threads
+Executes tasks efficiently
+🔹 Why use it?
+✔ Better performance
+✔ Thread reuse
+✔ Controlled execution
+🔹 Types of ExecutorService
+Using Executors class:
+1. Fixed Thread Pool
+Executors.newFixedThreadPool(5);
+👉 Fixed number of threads
+2. Cached Thread Pool
+Executors.newCachedThreadPool();
+👉 Creates threads as needed, reuses old ones
+3. Single Thread Executor
+Executors.newSingleThreadExecutor();
+👉 Only one thread (sequential execution)
+4. Scheduled Thread Pool
+Executors.newScheduledThreadPool(3);
+👉 Runs tasks after delay or periodically
