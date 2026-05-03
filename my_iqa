@@ -23,3 +23,16 @@ Que 2) Difference between PutMapping and PatchMapping ?
 ---------------------------------------------------------
 @PutMapping	 - Update entire resource
 @PatchMapping	- Update partial resource
+
+Que 3) How to use Employee object as key in HashMap? 
+----------------------------------------------------
+In Java, if you want to use a custom object (like Employee) as a key in HashMap, you must override:
+👉 hashCode()
+👉 equals()
+🔹 Why Required?
+HashMap internally uses:
+hashCode() → to find bucket
+equals() → to compare keys inside bucket
+❗ If you don’t override:
+Duplicate keys may be inserted
+Retrieval may fail ==> We will get null values 
