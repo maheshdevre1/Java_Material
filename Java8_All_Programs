@@ -17,6 +17,7 @@ import java.util.stream.Stream;
 
 public class Java8Allprograms {
 	public static void main(String[] args) {
+        //listOfIntegerRemoveDuplicatesReplaceEvenWithEAndOddWithO();
 		// Practice();
 		// FrequencyOfCharacter();
 		// frequency_of_a_word();
@@ -74,6 +75,12 @@ public class Java8Allprograms {
 		/* New program */
 		// reverse a list of integer
 
+	}
+
+private static void listOfIntegerRemoveDuplicatesReplaceEvenWithEAndOddWithO() {
+	    List<Integer> list = Arrays.asList(2,3,2,5);
+	    list.stream().distinct().map(i->i%2==0? "E":"O").forEach(System.out::println);
+		
 	}
 
 	private static void How_do_you_get_last_element_of_an_array() {
