@@ -18,3 +18,8 @@ Lock is automatically released (no manual unlock)
 If more than 8 entries are present in the same bucket:
 Linked list is converted into tree structure (Red-Black Tree)
 (only if table size ≥ 64, otherwise resizing happens)
+
+Que 2) Difference between PutMapping and PatchMapping ?
+---------------------------------------------------------
+@PutMapping	 - Update entire resource
+@PatchMapping	- Update partial resource
