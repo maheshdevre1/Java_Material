@@ -1,1 +1,20 @@
-
+Que 1) Concurrent Hashmap internal working ?
+---------------------------------------------
+When we create an object of ConcurrentHashMap in Java, 16 buckets are not created immediately. 
+The table is created lazily when the first entry is added (default capacity is 16).
+When we add an entry:
+First it calculates hashCode
+Then it calculates index value using that hash
+Based on index, entry is assigned to a particular bucket in Node format
+If bucket is null:
+Entry is inserted using CAS (no locking required)
+If bucket is not null:
+It will lock only that particular bucket (not whole map)
+Then it checks:
+If key already exists → value is updated
+If key not exists → entry is added in linked list
+After operation completes:
+Lock is automatically released (no manual unlock)
+If more than 8 entries are present in the same bucket:
+Linked list is converted into tree structure (Red-Black Tree)
+(only if table size ≥ 64, otherwise resizing happens)
