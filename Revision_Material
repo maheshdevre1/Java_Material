@@ -69,6 +69,26 @@ class lock and object lock diff
 Callable and runnable diff
 ThreadLocal variable
 
+Collection
+-----------
+Collection Hirachy
+List - ArraysList, LinkedList, Vector, Stack
+Set - HashSet, LinkedHashSet, TreeSet
+Queue - PriorityQueue and Deque(I)
+
+Map - HashMap, LinkedHashMap and TreeMap
+ConcurrentHashMap, HashTable
+root interface in the collection hierarchy
+Collection and Collections diff
+collection classes are synchronized or thread-safe
+iterator and Enumeration diff
+Which methods you need to override to use any object as a key in HashMap
+difference between Queue and Stack
+Comparable and Comparator interfaces
+BlockingQueue
+
+
+
 
 
 
