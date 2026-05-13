@@ -79,6 +79,7 @@ Control	Less	More precise
 When used	When 1 bean should be default	When multiple choices needed
 
 Que 5)What is ExecutorService?
+-------------------------------
 In Java, ExecutorService is used to manage and control multiple threads.
 👉 Instead of creating threads manually, it:
 Creates a thread pool
@@ -104,9 +105,18 @@ Executors.newScheduledThreadPool(3);
 👉 Runs tasks after delay or periodically
 
 Que 6) When concurrent modification exception occured ?
+-------------------------------------------------------
 In Java, ConcurrentModificationException occurs when a collection is structurally modified (add/remove) while it 
 is being iterated using a fail-fast iterator (like for-each or Iterator), except through the iterator’s own remove() method.
 
 Que 7) If the return type is different, method name is same, and arguments are different, is it considered method overloading in Java?
+-------------------------------------------------------------------------------------------------------------------------------------
 Yes, it is valid method overloading because the method parameters are different.
 In method overloading, Java checks the method signature (method name + arguments), not the return type.
+
+Que 8)If a try block contains 1/0 and there are multiple catch blocks for Exception, ArithmeticException, and a custom exception,
+which catch block will execute?
+---------------------------------------------------------------------------------------------------------------------------------
+The ArithmeticException catch block will execute because 1/0 throws an ArithmeticException.
+Java always executes the most specific matching catch block first.
+
