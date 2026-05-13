@@ -49,6 +49,26 @@ What is SQLException, NumberFormatException, ArrayIndexOutOfBoundsException
 if an exception is thrown by the main method
 unreachable catch block error
 
+Multithreading
+---------------
+What is Mulththreading, ways to achieve
+Synchronization
+Inter thread communication
+thread life cycle
+Deadlock situaition, How to avoid
+join(), yield()
+ExecutorService and types
+user thread and demon thread
+thread pool and thread schedular
+sleep() and wait() diff
+run() and start() diff
+volatile
+Serialization and Deserialization
+Thread priority
+class lock and object lock diff
+Callable and runnable diff
+ThreadLocal variable
+
 
 
 
