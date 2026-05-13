@@ -86,7 +86,12 @@ Which methods you need to override to use any object as a key in HashMap
 difference between Queue and Stack
 Comparable and Comparator interfaces
 BlockingQueue
-
+CopyOnWriteArrayList
+Fail- fast iterator and Fail-safe iterator
+How do you use a custom object as a key in Collection classes like HashMap
+hash-collision in Hashtable
+hashCode() and equals()  contract
+ What are concurrentCollectionClasses
 
 
 
