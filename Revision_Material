@@ -34,6 +34,22 @@ intern(), substring()-  means
 how to create immutable class
 Why String is mostly used as a key in HashMap class?
 
+Exception
+-----------
+Ways to handle exception, diff keyword
+Exception hirachy
+checked and unchecked exception
+what Errors and Exception diff? eample
+try with resource
+ClassNotFoundException and NoClassDefFoundError diff
+OutOfMemoryError,StackOverflowError,ClassCastException 
+root class for all types of errors and exceptions
+List the Methods in the Throwable class
+What is SQLException, NumberFormatException, ArrayIndexOutOfBoundsException 
+if an exception is thrown by the main method
+unreachable catch block error
+
+
 
 
 
