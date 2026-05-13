@@ -12,3 +12,28 @@ this super diff
 wrapper classes
 object clonning
 composition and inheritance diff
+
+Array 
+-----
+What is Array
+Array Store Exception and ArrayOutOfBoundExc diff
+Can we use generic - no
+Array is thread-safe - yes
+can we make array volatile - yes
+
+String
+-------
+What is String
+diff String, StringBuffer, StringBuilder
+String methods
+== and equals() diff
+What ways we can oject in string
+what is SCP-> why provided SCP
+Is string thred safe - yes
+intern(), substring()-  means
+how to create immutable class
+Why String is mostly used as a key in HashMap class?
+
+
+
+
