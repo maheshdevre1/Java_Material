@@ -12,6 +12,7 @@ this super diff
 wrapper classes
 object clonning
 composition and inheritance diff
+classloader
 
 Array 
 -----
@@ -92,6 +93,24 @@ How do you use a custom object as a key in Collection classes like HashMap
 hash-collision in Hashtable
 hashCode() and equals()  contract
  What are concurrentCollectionClasses
+
+Java8
+-------
+Java 8 features
+Predicate, Function, Consumer and Supplier
+Intermediate and terminal operation
+Changes in HashMap after Java8
+PermGen and Metaspace
+Collection API and Stream API diff
+Iterator and Spliterator diff
+Internal iteration and External iteration diff
+String::valueOf 
+skip(long) and limit(long)  diff
+findAny() and findFirst()  diff
+Filter and Map diff
+changes garbage collection after java6
+
+
 
 
 
