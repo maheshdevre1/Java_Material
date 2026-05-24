@@ -110,6 +110,54 @@ findAny() and findFirst()  diff
 Filter and Map diff
 changes garbage collection after java6
 
+Spring
+------
+1) FrontController/DispatcherServlet
+2) Dependency Injection
+3) Actuator 
+4) configure new SB project
+5) starter
+6) how to read value from properties file
+7) Authentication/Authorization
+8) Scope of Spring Bean
+9) Qualifier & Primary Diff
+10) How to connect DB with SP App
+11)module in Spring 
+12) How to write any api 
+13) Cohension/coupling
+14) benefits of jpa over hibernate
+15) stages of hiberante
+16) how to avoid status 500
+17) Solid principles
+18) how to connect multiple database(Profile concept)
+19) @SpringBootApplication
+20) Spring initializer
+21) how to change tomcat in SB
+22) disable any configuration
+23) Spring Security
+24) JWT token contain 
+
+Microservices
+--------------
+1)Componets of MA
+2)Synchronization and Asynchronization communication
+3)Circuit Breaker
+4)Advantages and Disadvantages
+5)Database design pattern in Microservices
+Database per service
+Shared Database
+Saga Pattern
+Event Sourcing
+CORS (Command Query Responsibility Segregation)
+API Composition
+Change Data Capture(CDC)
+
+
+
+
+
+
+
 
 
 
